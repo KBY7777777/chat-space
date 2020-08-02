@@ -29,3 +29,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+#応用カリNo79の実演にて、画像がGithubにコミットされないように、画像が保管されるdirを.gitignoreに追加するもの。
+#（投稿された画像自体はソースコードに関係ないため）
+public/uploads/*
