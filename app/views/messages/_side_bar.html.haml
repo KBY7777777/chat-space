@@ -1,0 +1,29 @@
+.side-bar
+  .side-bar__header
+    .side-bar__header__box
+      .side-bar__header__box__name
+        KBY（ユーザー名）
+      .side-bar__header__box__icon
+        .side-bar__header__box__icon__btn
+          = link_to '#', class: "side-bar__header__box__icon__btn side-bar__header__box__icon__btn--edit" do
+            = icon('fas', 'edit',  class: "side-bar__header__box__icon__btn--logo")
+        .side-bar__header__box__icon__btn
+          = link_to '#', class: "side-bar__header__box__icon__btn side-bar__header__box__icon__btn--cog" do
+            = icon('fas', 'cog',  class: "side-bar__header__box__icon__btn--logo")
+
+  .side-bar__content
+    .side-bar__content__group
+      .side-bar__content__group__name
+        グループ001
+      .side-bar__content__group__message
+        テスト入力001。
+    .side-bar__content__group
+      .side-bar__content__group__name
+        グループ002
+      .side-bar__content__group__message
+        テスト入力002。
+    .side-bar__content__group
+      .side-bar__content__group__name
+        グループ003
+      .side-bar__content__group__message
+        テスト入力003。

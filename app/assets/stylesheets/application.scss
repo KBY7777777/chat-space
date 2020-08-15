@@ -1,0 +1,10 @@
+//応用カリNo89の実演にて、ファイルを生成し、reset.scssを読み込むための下記コードを追記
+@import "reset";
+
+//messages.scssを読み込むコードを追記
+//（messages.scssは、modulesなるdirを設けて格納したので、それに合わせたパス記述になっている）
+@import "modules/messages";
+
+//FontAwesomeを使用するためのコードを追記（応用カリNo88で記述したコードと同じもの）
+@import "font-awesome-sprockets";
+@import "font-awesome";
