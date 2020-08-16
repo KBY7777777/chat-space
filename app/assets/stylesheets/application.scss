@@ -8,3 +8,9 @@
 //FontAwesomeを使用するためのコードを追記（応用カリNo88で記述したコードと同じもの）
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+//user.scssを読み込むコードを追記（応用カリNo90にて。上記messages.scssについての設定と同じ）
+@import "modules/user";
+
+//flash.scssを読み込むコードを追記（応用カリNo90にて。上記messages.scssについての設定と同じ）
+@import "modules/flash";
