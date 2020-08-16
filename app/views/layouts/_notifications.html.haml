@@ -1,0 +1,5 @@
+-#応用カリNo90にて、フラッシュメッセージ表示機能のviewとして作成
+
+.Notification
+  - flash.each do |key, value|
+    = content_tag :div, value, class: key

@@ -8,4 +8,6 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    -#応用カリNo90にて、フラッシュメッセージ表示機能として「notifications」のviewを呼び出す設定を追記
+    = render 'layouts/notifications'
     = yield

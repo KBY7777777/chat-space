@@ -1,0 +1,17 @@
+//応用カリNo90にて、フラッシュメッセージ表示機能の装飾実装として作成
+
+.Notification {
+  //notice系のメッセージは青色背景
+  .notice {
+    background-color: #38AEF0;
+    color: #fff;
+    text-align: center;
+  }
+
+  //alert系のメッセージは赤色背景
+  .alert {
+    background-color: #F35500;
+    color: #fff;
+    text-align: center;
+  }
+}

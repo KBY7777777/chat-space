@@ -58,3 +58,6 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 
 #応用カリNo89の実演にて、FontAwesomeを使用するためのgemを追記
 gem 'font-awesome-sass'
+
+#応用カリNo90の実演にて、deviseを使用するためのgemを追記
+gem 'devise'
