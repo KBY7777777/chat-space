@@ -5,27 +5,36 @@
         -#ログイン中のuser名が表示されるよう、下記コードに変更
         = current_user.name
       .side-bar__header__box__icon
+        -#editボタンで新規チャットグループ登録ページ（/groups/new）に遷移するよう、link_to先を変更
         .side-bar__header__box__icon__btn
-          = link_to '#', class: "side-bar__header__box__icon__btn side-bar__header__box__icon__btn--edit" do
+          = link_to '/groups/new', class: "side-bar__header__box__icon__btn side-bar__header__box__icon__btn--edit" do
             = icon('fas', 'edit',  class: "side-bar__header__box__icon__btn--logo")
         -#cogボタンで編集ページに遷移するよう、link_to先を変更
         .side-bar__header__box__icon__btn
           = link_to edit_user_path(current_user), class: "side-bar__header__box__icon__btn side-bar__header__box__icon__btn--cog" do
             = icon('fas', 'cog',  class: "side-bar__header__box__icon__btn--logo")
 
+  -#応用カリNo91にて、viewの調整でlink_toメソッドでGroup情報を取得しての表示に変更するため、コードを書き換え
   .side-bar__content
-    .side-bar__content__group
-      .side-bar__content__group__name
-        グループ001
-      .side-bar__content__group__message
-        テスト入力001。
-    .side-bar__content__group
-      .side-bar__content__group__name
-        グループ002
-      .side-bar__content__group__message
-        テスト入力002。
-    .side-bar__content__group
-      .side-bar__content__group__name
-        グループ003
-      .side-bar__content__group__message
-        テスト入力003。
+    -# .side-bar__content__group
+    -#   .side-bar__content__group__name
+    -#     グループ001
+    -#   .side-bar__content__group__message
+    -#     テスト入力001。
+    -# .side-bar__content__group
+    -#   .side-bar__content__group__name
+    -#     グループ002
+    -#   .side-bar__content__group__message
+    -#     テスト入力002。
+    -# .side-bar__content__group
+    -#   .side-bar__content__group__name
+    -#     グループ003
+    -#   .side-bar__content__group__message
+    -#     テスト入力003。
+    - current_user.groups.each do |chatgroup|
+      .side-bar__content__group
+        = link_to '#' do
+          .side-bar__content__group__name
+            = chatgroup.name
+          .side-bar__content__group__message
+            メッセージはまだありません

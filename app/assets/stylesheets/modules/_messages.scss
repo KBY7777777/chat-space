@@ -45,9 +45,18 @@
     height: calc(100vh - 100px);
     padding: 0 20px;
 
+    //メンターさんのadviceで知った、aタグ部分への装飾記述
+    //scss内での記述位置で反映範囲が変わるか不明だが、.side-bar__content__group内としたいので一旦ここに。
+    a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
     &__group {
       padding: 20px 0 40px 0;
-      color: #ffffff;
+      //aタグ分の装飾で指定したので、&__groupにしかけた文字色と文字装飾の記述はコメントアウト
+      // color: #ffffff;
+      // text-decoration: none;
 
       &__name {
         font-size: 15px;

@@ -1,0 +1,15 @@
+-#応用カリNo91にて、グループの新規登録画面のviewファイルとして作成
+
+-#仮表示の文字列
+-# ＜新規チャットグループ＞
+
+-#応用カリNo91にて、checkbox形式でのデータ保存機能の実装にて追記
+-# = form_with model: @group, local: true do |f|
+-#   = f.text_field :name, class: "SettingGroupForm__input", placeholder: "グループ名を入力してください"
+-#   = f.collection_check_boxes :user_ids, User.all, :id, :name
+-#   = f.submit "Save", class: "SettingGroupForm__button"
+
+-#応用カリNo91にて、部分templateでviewを表示するように変更することに伴い、下記コードに書き換え
+.SettingGroupForm
+  %h1 新規チャットグループ
+  = render partial: 'form', locals: { group: @group }

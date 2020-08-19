@@ -61,3 +61,6 @@ gem 'font-awesome-sass'
 
 #応用カリNo90の実演にて、deviseを使用するためのgemを追記
 gem 'devise'
+
+#応用カリNo91にて、送信されるデータを確認するためのpryのgem設定を追記
+gem 'pry-rails'
