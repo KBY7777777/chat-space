@@ -10,4 +10,8 @@ class User < ApplicationRecord
   #応用カリNo91にて、groupsテーブルの追加に伴うassociationを設定
   has_many :group_users
   has_many :groups, through: :group_users
+
+  #応用カリNo92にて、messageテーブルに対して1vs多のrelationを設定
+  has_many :messages
+  
 end

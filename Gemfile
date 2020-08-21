@@ -64,3 +64,7 @@ gem 'devise'
 
 #応用カリNo91にて、送信されるデータを確認するためのpryのgem設定を追記
 gem 'pry-rails'
+
+#応用カリNo92にて、メッセージ送信機能実装のためのgem設定を追記
+gem 'carrierwave'
+gem 'mini_magick'
