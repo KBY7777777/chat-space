@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   #応用カリNo91にて、groupsコントローラーに対するnewアクションとcreateアクションのroutingを追記
   #グループ情報編集機能の実装につき、editアクションとupdateアクションのroutingを追記
   #さらに、トップ画面の実装につき、indexアクションのroutingを追記
-  resources :groups, only: [:new, :create, :edit, :update, :index]
+  #さらに、messagesコントローラーに対してcreateアクションのroutingを追記し、indexはmessagesに再設定
+  resources :groups, only: [:new, :create, :edit, :update] do
+    resources :messages, only: [:index, :create]
+  end
 
 end

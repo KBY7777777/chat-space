@@ -32,9 +32,15 @@
     -#   .side-bar__content__group__message
     -#     テスト入力003。
     - current_user.groups.each do |chatgroup|
+      -#応用カリNo92にて、link_toメソッドのリンク先を下記のとおり書き換え
+      -# .side-bar__content__group
+      -#   = link_to '#' do
       .side-bar__content__group
-        = link_to '#' do
+        = link_to group_messages_path(chatgroup) do
           .side-bar__content__group__name
             = chatgroup.name
+          -#応用カリNo92、最新メッセージの表示機能の実装にて、modelで定義したshow_last_messageメソッドで参照するコードに書き換え
+          -# .side-bar__content__group__message
+          -#   メッセージはまだありません
           .side-bar__content__group__message
-            メッセージはまだありません
+            = chatgroup.show_last_message

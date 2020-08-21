@@ -1,37 +1,59 @@
 .main-chat
   .main-chat__header
     .main-chat__header__group
+      -#応用カリNo92、グループ名と所属メンバーを表示する設定の実装にて、group-nameとmember-listの表示コードを書き換え
       .main-chat__header__group__group-name
-        ぐでたまグループ
+        -# ぐでたまグループ
+        = @group.name
       .main-chat__header__group__member-list
-        Member : KBY
+        -# Member : KBY
+        Member :
+        - @group.users.each do |user|
+          = user.name
+    -#さらに、Editボタンにグループ編集ページへのリンクを設定
+    -# .main-chat__header__btn
+    -#   = link_to '#', class: "main-chat__header__btn main-chat__header__btn--edit" do
     .main-chat__header__btn
-      = link_to '#', class: "main-chat__header__btn main-chat__header__btn--edit" do
+      = link_to edit_group_path(@group.id), class: "main-chat__header__btn main-chat__header__btn--edit" do
         Edit
 
+  -#応用カリNo92、グループにメッセージを表示する設定の実装にて、viewに機能を実装するため、コードを書き換え
   .main-chat__content
-    .main-chat__content__message
-      .main-chat__content__message__info
-        .main-chat__content__message__info__name
-          GUDE
-        .main-chat__content__message__info__date
-          2020/07/07(TUE) 07:09:51
-      .main-chat__content__message__comment
-        ぐーでたまたま
-    .main-chat__content__message
-      .main-chat__content__message__info
-        .main-chat__content__message__info__name
-          GUDE
-        .main-chat__content__message__info__date
-          2020/08/08(SAT) 07:09:51
-      .main-chat__content__message__comment
-        だりぃ
+    -# .main-chat__content__message
+    -#   .main-chat__content__message__info
+    -#     .main-chat__content__message__info__name
+    -#       GUDE
+    -#     .main-chat__content__message__info__date
+    -#       2020/07/07(TUE) 07:09:51
+    -#   .main-chat__content__message__comment
+    -#     ぐーでたまたま
+    -# .main-chat__content__message
+    -#   .main-chat__content__message__info
+    -#     .main-chat__content__message__info__name
+    -#       GUDE
+    -#     .main-chat__content__message__info__date
+    -#       2020/08/08(SAT) 07:09:51
+    -#   .main-chat__content__message__comment
+    -#     だりぃ
 
+    -#カリ内容を参考に、部分templateを呼び出すコードを実装
+    = render @messages
+
+  -#応用カリNo92、メッセージ送信機能実装にて、viewに機能を実装するため、コードを書き換え
   .main-chat__footer
-    %form.inputfield
-      .textfield
-        %input{type: "text", class: "textfield__text", placeholder: "type a message"}
-        %label{class: "textfield__image"}
-          = icon('far', 'image')
-          %input{type: "file", class: "textfield__image__file"}
-      %input{type: "submit", class: "send-btn", value: "Send"}
+    -# %form.inputfield
+    -#   .textfield
+    -#     %input{type: "text", class: "textfield__text", placeholder: "type a message"}
+    -#     %label{class: "textfield__image"}
+    -#       = icon('far', 'image')
+    -#       %input{type: "file", class: "textfield__image__file"}
+    -#   %input{type: "submit", class: "send-btn", value: "Send"}
+
+    -#カリ内容のコードを参考に、クラス名やネスト構成を調整して下記コードにて実装
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
+      .form.textfield
+        = f.text_field :content, class: 'textfield__text', placeholder: 'type a message'
+        = f.label :image, class: 'textfield__image' do
+          = icon('far', 'image', class: 'textfield__image__icon')
+          = f.file_field :image, class: 'textfield__image__file'
+      = f.submit 'Send', class: 'send-btn'
