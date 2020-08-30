@@ -12,6 +12,9 @@ class Group < ApplicationRecord
   #nameカラムについて、入力必須、重複NGの制約を設定
   validates :name, presence: true, uniqueness: true
 
+  #応用カリNo97にて、テストコード実施時に無用の警告文の表示を回避できる記述（なくてもよい）
+  validates :name, presence: true, uniqueness: {case_sensitive: true}
+
   #応用カリNo92、side-bar__contentに最新メッセージを表示する設定の実装にて、
   #最新メッセージを探索・判別するメソッドを新設
   def show_last_message

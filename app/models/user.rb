@@ -13,5 +13,8 @@ class User < ApplicationRecord
 
   #応用カリNo92にて、messageテーブルに対して1vs多のrelationを設定
   has_many :messages
+
+  #応用カリNo97にて、テストコード実施時に無用の警告文の表示を回避できる記述（なくてもよい）
+  validates :name, presence: true, uniqueness: {case_sensitive: true}
   
 end
