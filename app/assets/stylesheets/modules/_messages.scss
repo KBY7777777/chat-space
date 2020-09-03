@@ -155,7 +155,7 @@
     padding: 20px 40px;
     //上下paddingの20pxは、footerの高さ90pxから、入力欄部分の50pxを減じ、均等分割した値
 
-    form {
+    .form {  //クラス名を「.form」に修正した
       display: flex;
 
       .textfield {

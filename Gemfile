@@ -53,18 +53,21 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#応用カリNo89の実演にて、Hamlを使用するためのgemを追記
+#応用No89の実演にて、Hamlを使用するためのgemを追記
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 
-#応用カリNo89の実演にて、FontAwesomeを使用するためのgemを追記
+#応用No89の実演にて、FontAwesomeを使用するためのgemを追記
 gem 'font-awesome-sass'
 
-#応用カリNo90の実演にて、deviseを使用するためのgemを追記
+#応用No90の実演にて、deviseを使用するためのgemを追記
 gem 'devise'
 
-#応用カリNo91にて、送信されるデータを確認するためのpryのgem設定を追記
+#応用No91にて、送信されるデータを確認するためのpryのgem設定を追記
 gem 'pry-rails'
 
-#応用カリNo92にて、メッセージ送信機能実装のためのgem設定を追記
+#応用No92にて、メッセージ送信機能実装のためのgem設定を追記
 gem 'carrierwave'
 gem 'mini_magick'
+
+#応用No108にて、メッセージ送信機能の非同期化のためjQueryのgemを追記
+gem 'jquery-rails'
