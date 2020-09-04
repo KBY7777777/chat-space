@@ -6,8 +6,9 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    -#応用No108にて、JS使用のためコードを書き換え
+    = javascript_include_tag 'application'
   %body
-    -#応用カリNo90にて、フラッシュメッセージ表示機能として「notifications」のviewを呼び出す設定を追記
+    -#応用No90にて、フラッシュメッセージ表示機能として「notifications」のviewを呼び出す設定を追記
     = render 'layouts/notifications'
     = yield
