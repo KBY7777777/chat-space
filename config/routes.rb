@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   #応用カリNo90の実演にて、editアクションとupdateアクションのroutingを追記
   #（rootパスは、前単元で上記のとおり記載済み）
-  resources :users, only: [:edit, :update]
+  #応用カリNo109にて、indexアクションのroutingを追記
+  resources :users, only: [:index, :edit, :update]
 
   #応用カリNo91にて、groupsコントローラーに対するnewアクションとcreateアクションのroutingを追記
   #グループ情報編集機能の実装につき、editアクションとupdateアクションのroutingを追記
