@@ -72,7 +72,11 @@ li {
   }
 }
 
-.ChatMember {
+//応用No109、インクリメンタルサーチ機能の実装にて、JSで作成するHTML内のコードで、
+//カリ資料ではChatMemberで共通していたところを「Chat-Group-Member」に変更したことに伴い、
+//ここのclass名も合わせる変更を加えた。
+// .ChatMember {
+.Chat-Group-Member {
   padding: 0 15px;
   line-height: 50px;
   font-size: 14px;
