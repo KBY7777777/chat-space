@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   #さらに、messagesコントローラーに対してcreateアクションのroutingを追記し、indexはmessagesに再設定
   resources :groups, only: [:new, :create, :edit, :update] do
     resources :messages, only: [:index, :create]
+    #応用No110にて、WebAPIとしたcontrollerでのアクションを実行する下記のroutingを追記
+    namespace :api do
+      resources :messages, only: :index, defaults: { format: 'json' }
+    end
   end
 
 end

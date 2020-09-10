@@ -1,7 +1,9 @@
 -#応用カリN092にて、main-chat__contentのメッセージ表示機能の実装のため、viewファイルを新設
 
 -#カリ内容のコードを参考に、クラス名やネスト構成を調整して下記コードにて実装
-.main-chat__content__message
+-#応用カリNo110にて、カスタムデータ属性なるHTMLタグの属性を用いてmessagesテーブルのid情報をHTMLに埋め込む
+-#（下行の「{data: {〜」以降部分を追記）
+.main-chat__content__message{data: {message: {id: message.id}}}
   .main-chat__content__message__info
     .main-chat__content__message__info__name
       = message.user.name
