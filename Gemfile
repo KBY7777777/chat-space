@@ -71,3 +71,8 @@ gem 'mini_magick'
 
 #応用No108にて、メッセージ送信機能の非同期化のためjQueryのgemを追記
 gem 'jquery-rails'
+
+#応用No120にて、アプリケーションサーバUnicornのgemを追記
+group :production do
+  gem 'unicorn', '5.4.1'
+end
