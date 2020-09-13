@@ -51,12 +51,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+#応用No120にて、EC2サーバにてRailsを起動するためのユーザー環境設定を変更
+# username: 「chat_space」から下記に変更
+# password: 「<%= ENV['CHAT_SPACE_DATABASE_PASSWORD'] %>」から下記に変更
 production:
   <<: *default
   database: chat_space_production
-  #応用No120にて、EC2サーバにてRailsを起動するためのユーザー環境設定を変更
-  # username: chat_space
-  # password: <%= ENV['CHAT_SPACE_DATABASE_PASSWORD'] %>
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
