@@ -54,5 +54,9 @@ test:
 production:
   <<: *default
   database: chat_space_production
-  username: chat_space
-  password: <%= ENV['CHAT_SPACE_DATABASE_PASSWORD'] %>
+  #応用No120にて、EC2サーバにてRailsを起動するためのユーザー環境設定を変更
+  # username: chat_space
+  # password: <%= ENV['CHAT_SPACE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
