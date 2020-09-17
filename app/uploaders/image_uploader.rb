@@ -7,9 +7,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   #生成時に「# include CarrierWave::MiniMagick」とあった設定のコメントアウトを解除
   include CarrierWave::MiniMagick
 
+  #応用No124にて、upload先を「file」から「fog」に変更
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :file
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
